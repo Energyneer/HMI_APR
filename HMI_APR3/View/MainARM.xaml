@@ -1,0 +1,324 @@
+﻿<Window x:Class="HMI_APR3.View.MainARM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HMI_APR3.View"
+        mc:Ignorable="d"
+        Title="MainARM" Height="643" Width="1415"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="80" MaxHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="300"></RowDefinition>
+            <RowDefinition MinHeight="50" MaxHeight="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="DimGray"></Grid>
+        <Canvas x:Name="rootCanvas" Grid.Row="1" Background="#dddddd">
+            <Canvas.RenderTransform>
+                <ScaleTransform ScaleX="{Binding ScaleX}" ScaleY="{Binding ScaleY}"></ScaleTransform>
+            </Canvas.RenderTransform>
+            <Border Margin="10 100 0 0" Background="#fafafa" Width="1080" Height="80"></Border>
+            <Border Canvas.Left="{Binding Lu3Sheets[0].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[0].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[0].Position}" Y1="95" X2="{Binding Lu3Sheets[0].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[0].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[0].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu3Sheets[1].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[1].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[1].Position}" Y1="95" X2="{Binding Lu3Sheets[1].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[1].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[1].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu3Sheets[2].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[2].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[2].Position}" Y1="95" X2="{Binding Lu3Sheets[2].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[2].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[2].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu3Sheets[3].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[3].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[3].Position}" Y1="95" X2="{Binding Lu3Sheets[3].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[3].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[3].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu3Sheets[4].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[4].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[4].Position}" Y1="95" X2="{Binding Lu3Sheets[4].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[4].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[4].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu3Sheets[5].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[5].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[5].Position}" Y1="95" X2="{Binding Lu3Sheets[5].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[5].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[5].Offset}" Foreground="Black"></TextBlock>
+
+            <Border Canvas.Left="{Binding Lu3Sheets[6].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu3Sheets[6].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu3Sheets[6].Position}" Y1="95" X2="{Binding Lu3Sheets[6].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu3Sheets[6].Position}" Canvas.Top="80" Text="{Binding Lu3Sheets[6].Offset}" Foreground="Black"></TextBlock>
+            
+            <!-- Lu2 section -->
+            <Border Canvas.Left="{Binding Lu2Sheets[0].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[0].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[0].Position}" Y1="95" X2="{Binding Lu2Sheets[0].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[0].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[0].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu2Sheets[1].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[1].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[1].Position}" Y1="95" X2="{Binding Lu2Sheets[1].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[1].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[1].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu2Sheets[2].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[2].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[2].Position}" Y1="95" X2="{Binding Lu2Sheets[2].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[2].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[2].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu2Sheets[3].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[3].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[3].Position}" Y1="95" X2="{Binding Lu2Sheets[3].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[3].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[3].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu2Sheets[4].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[4].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[4].Position}" Y1="95" X2="{Binding Lu2Sheets[4].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[4].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[4].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu2Sheets[5].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[5].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[5].Position}" Y1="95" X2="{Binding Lu2Sheets[5].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[5].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[5].Offset}" Foreground="Black"></TextBlock>
+
+            <Border Canvas.Left="{Binding Lu2Sheets[6].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu2Sheets[6].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu2Sheets[6].Position}" Y1="95" X2="{Binding Lu2Sheets[6].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu2Sheets[6].Position}" Canvas.Top="80" Text="{Binding Lu2Sheets[6].Offset}" Foreground="Black"></TextBlock>
+            
+            <!-- Lu1 section -->
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[0].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[0].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[0].Position}" Y1="95" X2="{Binding Lu1Sheets[0].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[0].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[0].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[1].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[1].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[1].Position}" Y1="95" X2="{Binding Lu1Sheets[1].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[1].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[1].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[2].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[2].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[2].Position}" Y1="95" X2="{Binding Lu1Sheets[2].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[2].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[2].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[3].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[3].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[3].Position}" Y1="95" X2="{Binding Lu1Sheets[3].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[3].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[3].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[4].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[4].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[4].Position}" Y1="95" X2="{Binding Lu1Sheets[4].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[4].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[4].Offset}" Foreground="Black"></TextBlock>
+            
+            <Border Canvas.Left="{Binding Lu1Sheets[5].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[5].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[5].Position}" Y1="95" X2="{Binding Lu1Sheets[5].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[5].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[5].Offset}" Foreground="Black"></TextBlock>
+
+            <Border Canvas.Left="{Binding Lu1Sheets[6].Position}" Canvas.Top="110" Height="60" Width="{Binding Lu1Sheets[6].Lenght}" Background="#505050"></Border>
+            <Line X1="{Binding Lu1Sheets[6].Position}" Y1="95" X2="{Binding Lu1Sheets[6].Position}" Y2="110" Stroke="Black"></Line>
+            <TextBlock Canvas.Left="{Binding Lu1Sheets[6].Position}" Canvas.Top="80" Text="{Binding Lu1Sheets[6].Offset}" Foreground="Black"></TextBlock>
+            
+            <!-- Throw sheets -->
+            
+            <Border Canvas.Left="10" Canvas.Top="225" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[0].Position}" Canvas.Top="225" Height="20" Width="{Binding Throws[0].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[0].PosNumber}" Canvas.Top="226" Text="{Binding Throws[0].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[0].PosLenght}" Canvas.Top="226" Text="{Binding Throws[0].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="250" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[1].Position}" Canvas.Top="250" Height="20" Width="{Binding Throws[1].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[1].PosNumber}" Canvas.Top="251" Text="{Binding Throws[1].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[1].PosLenght}" Canvas.Top="251" Text="{Binding Throws[1].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="275" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[2].Position}" Canvas.Top="275" Height="20" Width="{Binding Throws[2].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[2].PosNumber}" Canvas.Top="276" Text="{Binding Throws[2].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[2].PosLenght}" Canvas.Top="276" Text="{Binding Throws[2].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="300" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[3].Position}" Canvas.Top="300" Height="20" Width="{Binding Throws[3].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[3].PosNumber}" Canvas.Top="301" Text="{Binding Throws[3].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[3].PosLenght}" Canvas.Top="301" Text="{Binding Throws[3].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="325" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[4].Position}" Canvas.Top="325" Height="20" Width="{Binding Throws[4].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[4].PosNumber}" Canvas.Top="326" Text="{Binding Throws[4].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[4].PosLenght}" Canvas.Top="326" Text="{Binding Throws[4].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+
+            <Border Canvas.Left="10" Canvas.Top="350" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[5].Position}" Canvas.Top="350" Height="20" Width="{Binding Throws[5].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[5].PosNumber}" Canvas.Top="351" Text="{Binding Throws[5].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[5].PosLenght}" Canvas.Top="351" Text="{Binding Throws[5].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="375" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[6].Position}" Canvas.Top="375" Height="20" Width="{Binding Throws[6].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[6].PosNumber}" Canvas.Top="376" Text="{Binding Throws[6].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[6].PosLenght}" Canvas.Top="376" Text="{Binding Throws[6].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="400" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[7].Position}" Canvas.Top="400" Height="20" Width="{Binding Throws[7].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[7].PosNumber}" Canvas.Top="401" Text="{Binding Throws[7].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[7].PosLenght}" Canvas.Top="401" Text="{Binding Throws[7].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="425" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[8].Position}" Canvas.Top="425" Height="20" Width="{Binding Throws[8].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[8].PosNumber}" Canvas.Top="426" Text="{Binding Throws[8].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[8].PosLenght}" Canvas.Top="426" Text="{Binding Throws[8].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="10" Canvas.Top="450" Width="1080" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="{Binding Throws[9].Position}" Canvas.Top="450" Height="20" Width="{Binding Throws[9].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="{Binding Throws[9].PosNumber}" Canvas.Top="451" Text="{Binding Throws[9].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding Throws[9].PosLenght}" Canvas.Top="451" Text="{Binding Throws[9].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+
+            <StackPanel Canvas.Left="20" Canvas.Top="20">
+                <TextBlock Text="LU3:" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sheets: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu3Counter}" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Speed: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu3Speed}"></TextBlock>
+                    <TextBlock Text=" mm/s"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <Line X1="370" Y1="0" X2="370" Y2="475" Stroke="Black" StrokeDashArray="10 5"></Line>
+
+            <StackPanel Canvas.Left="20" Canvas.Top="190" Orientation="Horizontal">
+                <TextBlock Text="In Packet: " FontSize="16"></TextBlock>
+                <TextBlock Text="{Binding Status.InPacket3}" FontWeight="Bold" FontSize="16"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Canvas.Left="390" Canvas.Top="20">
+                <TextBlock Text="LU2:" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sheets: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu2Counter}" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Speed: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu2Speed}"></TextBlock>
+                    <TextBlock Text=" mm/s"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <Line X1="730" Y1="0" X2="730" Y2="475" Stroke="Black" StrokeDashArray="10 5"></Line>
+
+            <StackPanel Canvas.Left="390" Canvas.Top="190" Orientation="Horizontal">
+                <TextBlock Text="In Packet: " FontSize="16"></TextBlock>
+                <TextBlock Text="{Binding Status.InPacket2}" FontWeight="Bold" FontSize="16"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Canvas.Left="750" Canvas.Top="20">
+                <TextBlock Text="LU1:" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sheets: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu1Counter}" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Speed: "></TextBlock>
+                    <TextBlock Text="{Binding Status.Lu1Speed}"></TextBlock>
+                    <TextBlock Text=" mm/s"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <Line X1="1100" Y1="0" X2="1100" Y2="475" Stroke="Black" StrokeDashArray="10 5"></Line>
+
+            <StackPanel Canvas.Left="750" Canvas.Top="190" Orientation="Horizontal">
+                <TextBlock Text="In Packet: " FontSize="16"></TextBlock>
+                <TextBlock Text="{Binding Status.InPacket1}" FontWeight="Bold" FontSize="16"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Canvas.Left="1120" Canvas.Top="20">
+                <TextBlock Text="Transporter:" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sheets: "></TextBlock>
+                    <TextBlock Text="{Binding Status.TranspCounter}" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Speed: "></TextBlock>
+                    <TextBlock Text="{Binding Status.ShSpeed}"></TextBlock>
+                    <TextBlock Text=" mm/s"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="{Binding Speeds[0]}"></TextBlock>
+
+            <!-- Transporter sheets -->
+            <Border Canvas.Left="1110" Canvas.Top="100" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="100" Height="20" Width="{Binding TranspSheets[0].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="101" Text="{Binding TranspSheets[0].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[0].PosLenght}" Canvas.Top="101" Text="{Binding TranspSheets[0].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="125" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="125" Height="20" Width="{Binding TranspSheets[1].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="126" Text="{Binding TranspSheets[1].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[1].PosLenght}" Canvas.Top="126" Text="{Binding TranspSheets[1].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="150" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="150" Height="20" Width="{Binding TranspSheets[2].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="151" Text="{Binding TranspSheets[2].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[2].PosLenght}" Canvas.Top="151" Text="{Binding TranspSheets[2].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="175" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="175" Height="20" Width="{Binding TranspSheets[3].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="176" Text="{Binding TranspSheets[3].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[3].PosLenght}" Canvas.Top="176" Text="{Binding TranspSheets[3].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="200" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="200" Height="20" Width="{Binding TranspSheets[4].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="201" Text="{Binding TranspSheets[4].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[4].PosLenght}" Canvas.Top="201" Text="{Binding TranspSheets[4].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+
+            <Border Canvas.Left="1110" Canvas.Top="225" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="225" Height="20" Width="{Binding TranspSheets[5].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="226" Text="{Binding TranspSheets[5].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[5].PosLenght}" Canvas.Top="226" Text="{Binding TranspSheets[5].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="250" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="250" Height="20" Width="{Binding TranspSheets[6].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="251" Text="{Binding TranspSheets[6].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[6].PosLenght}" Canvas.Top="251" Text="{Binding TranspSheets[6].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="275" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="275" Height="20" Width="{Binding TranspSheets[7].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="276" Text="{Binding TranspSheets[7].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[7].PosLenght}" Canvas.Top="276" Text="{Binding TranspSheets[7].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="300" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="300" Height="20" Width="{Binding TranspSheets[8].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="301" Text="{Binding TranspSheets[8].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[8].PosLenght}" Canvas.Top="301" Text="{Binding TranspSheets[8].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="325" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="325" Height="20" Width="{Binding TranspSheets[9].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="326" Text="{Binding TranspSheets[9].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[9].PosLenght}" Canvas.Top="326" Text="{Binding TranspSheets[9].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+
+            <Border Canvas.Left="1110" Canvas.Top="350" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="350" Height="20" Width="{Binding TranspSheets[10].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="351" Text="{Binding TranspSheets[10].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[10].PosLenght}" Canvas.Top="351" Text="{Binding TranspSheets[10].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="375" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="375" Height="20" Width="{Binding TranspSheets[11].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="376" Text="{Binding TranspSheets[11].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[11].PosLenght}" Canvas.Top="376" Text="{Binding TranspSheets[11].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="400" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="400" Height="20" Width="{Binding TranspSheets[12].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="401" Text="{Binding TranspSheets[12].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[12].PosLenght}" Canvas.Top="401" Text="{Binding TranspSheets[12].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="425" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="425" Height="20" Width="{Binding TranspSheets[13].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="426" Text="{Binding TranspSheets[13].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[13].PosLenght}" Canvas.Top="426" Text="{Binding TranspSheets[13].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+            <Border Canvas.Left="1110" Canvas.Top="450" Width="280" Height="20" Background="#fafafa"></Border>
+            <Border Canvas.Left="1150" Canvas.Top="450" Height="20" Width="{Binding TranspSheets[14].Lenght}" Background="#505050"></Border>
+            <TextBlock Canvas.Left="1115" Canvas.Top="451" Text="{Binding TranspSheets[14].Number}" Foreground="Black" Width="30" TextAlignment="Right"></TextBlock>
+            <TextBlock Canvas.Left="{Binding TranspSheets[14].PosLenght}" Canvas.Top="451" Text="{Binding TranspSheets[14].Offset}" Foreground="Snow" Width="40" TextAlignment="Center"></TextBlock>
+            
+
+        </Canvas>
+        <Grid Grid.Row="2" Background="DimGray">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Отрезанных листов: " FontSize="14" Foreground="Snow" Margin="50 0 0 0"></TextBlock>
+                <TextBlock Text="{Binding Status.ActSheetNumber}" FontSize="14" Foreground="Snow" Margin="10 0 0 0"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
